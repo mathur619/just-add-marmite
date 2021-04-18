@@ -7,13 +7,11 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const res = await client.getEntries({ content_type: "recipe" });
+  const { items } = await client.getEntries({ content_type: "recipe" });
 
   return {
-    props: {
-      recipes: res.items,
-      revalidate: 2,
-    },
+    props: { recipes: items },
+    revalidate: 1,
   };
 }
 
