@@ -18,8 +18,6 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({ recipes }) {
-  console.log("🚀 ~ file: index.js ~ line 19 ~ Recipes ~ recipes", recipes);
-
   return (
     <div className="recipe-list">
       {recipes.map((recipe) => (
